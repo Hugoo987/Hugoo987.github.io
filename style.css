@@ -1,0 +1,39 @@
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #f4f6f8;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background: #ffffff;
+  padding: 28px;
+  width: 360px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 16px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+button {
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+#result {
+  margin-top: 16px;
+  word-break: break-all;
+}
