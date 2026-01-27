@@ -9,7 +9,7 @@ function shortenUrl() {
 
   // GitHub Pages 導購中繼頁
   const redirectBase =
-    "https://YOUR_GITHUB_NAME.github.io/REPO_NAME/go.html?to=";
+    "https://shopee.tw/";
 
   const redirectUrl = redirectBase + encodeURIComponent(longUrl);
 
