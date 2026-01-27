@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>Redirecting...</title>
+
+  <!-- 保險用 fallback -->
+  <meta http-equiv="refresh" content="1">
+
+  <style>
+    body {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const target = params.get("to");
+
+  if (!target) {
+    document.body.style.display = "block";
+    document.body.innerText = "❌ 無效的導向";
+    throw new Error("Missing target URL");
+  }
+
+  const targetUrl = decodeURIComponent(target);
+
+  /* ========= 導購記錄區（可擴充） ========= */
+
+  console.log("導購紀錄：", {
+    url: targetUrl,
+    time: new Date().toISOString(),
+    referrer: document.referrer
+  });
+
+  // 範例：未來可接 tracking API
+  // fetch("https://your-api.com/track", {
+  //   method: "POST",
+  //   body: JSON.stringify({
+  //     url: targetUrl,
+  //     time: Date.now(),
+  //     referrer: document.referrer
+  //   })
+  // });
+
+  /* ========= 極短延遲後跳轉 ========= */
+
+  setTimeout(() => {
+    // replace 不留下歷史紀錄
+    window.location.replace(targetUrl);
+  }, 100);
+</script>
+
+</body>
+</html>
