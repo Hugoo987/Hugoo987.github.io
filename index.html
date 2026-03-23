@@ -2,25 +2,49 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
-  <title>縮網址工具</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>旅遊規劃 App</title>
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <header class="hero">
+    <h1>🧳 我的旅遊規劃 App</h1>
+    <p>清楚的每日行程 + 互動地圖，規劃旅程更直覺。</p>
+  </header>
 
-  <div class="container">
-    <h1>🔗 縮網址工具</h1>
+  <main class="layout">
+    <section class="card controls">
+      <h2>選擇目的地</h2>
+      <label for="destinationSelect">旅遊城市</label>
+      <select id="destinationSelect" aria-label="選擇旅遊城市"></select>
 
-    <input
-      type="text"
-      id="longUrl"
-      placeholder="請輸入長網址"
-    />
+      <div class="trip-meta" id="tripMeta"></div>
+    </section>
 
-    <button onclick="shortenUrl()">產生導購短網址</button>
+    <section class="card itinerary">
+      <h2>行程表</h2>
+      <div class="day-tabs" id="dayTabs"></div>
+      <ol id="timeline" class="timeline"></ol>
+    </section>
 
-    <div id="result"></div>
-  </div>
+    <section class="card map-panel">
+      <h2>地圖</h2>
+      <p class="hint">點擊地圖標記可以看到景點與活動資訊。</p>
+      <div id="map" role="application" aria-label="行程地圖"></div>
+    </section>
+  </main>
 
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
   <script src="script.js"></script>
 </body>
 </html>
